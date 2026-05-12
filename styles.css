@@ -500,6 +500,507 @@ h2 {
   font-weight: 700;
 }
 
+.quest-panel {
+  margin: 12px 0;
+  padding: 13px;
+  border: 1px solid rgba(49, 84, 106, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(238, 250, 255, 0.8)),
+    var(--white);
+}
+
+.quest-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quest-heading h2 {
+  font-size: 1rem;
+}
+
+.quest-badge {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 8px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--butter);
+  box-shadow: 5px 5px 0 rgba(255, 213, 229, 0.55);
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.quest-copy {
+  margin: 10px 0 12px;
+  font-size: 0.9rem;
+  font-weight: 720;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.quest-playground {
+  border: 1px dashed rgba(49, 84, 106, 0.18);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 16% 22%, rgba(255, 232, 137, 0.38) 0 13px, transparent 14px),
+    linear-gradient(180deg, rgba(217, 244, 255, 0.8), rgba(255, 249, 237, 0.72));
+  overflow: hidden;
+}
+
+.sky-garden {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  min-height: 190px;
+  padding: 14px;
+}
+
+.quest-meter {
+  align-self: end;
+  height: 10px;
+  border: 1px solid rgba(49, 84, 106, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.quest-meter span {
+  display: block;
+  width: var(--quest-progress);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--mint), var(--butter), var(--rose));
+  transition: width 240ms ease;
+}
+
+.quest-count {
+  margin: -6px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+.water-garden {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.plant-visual {
+  position: relative;
+  width: min(46vw, 160px);
+  height: 132px;
+  justify-self: center;
+}
+
+.plant-pot {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 74px;
+  height: 46px;
+  border: 2px solid var(--ink);
+  border-radius: 8px 8px 18px 18px;
+  background: var(--cream);
+  transform: translateX(-50%);
+}
+
+.plant-stem {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  width: 10px;
+  height: 52px;
+  border-radius: 999px;
+  background: #84d9a5;
+  transform: translateX(-50%) scaleY(0.38);
+  transform-origin: bottom;
+  transition: transform 260ms ease;
+}
+
+.plant-leaf,
+.plant-bloom {
+  position: absolute;
+  opacity: 0;
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.plant-leaf {
+  bottom: 69px;
+  width: 38px;
+  height: 24px;
+  border: 2px solid rgba(49, 84, 106, 0.48);
+  border-radius: 999px 999px 999px 0;
+  background: var(--mint);
+}
+
+.plant-leaf-left {
+  left: 42px;
+  transform: rotate(-28deg) scale(0.5);
+}
+
+.plant-leaf-right {
+  right: 42px;
+  transform: rotate(28deg) scale(0.5);
+}
+
+.plant-bloom {
+  left: 50%;
+  bottom: 92px;
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--rose);
+  transform: translateX(-50%) scale(0.35);
+}
+
+.plant-bloom::before,
+.plant-bloom::after {
+  position: absolute;
+  content: "";
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--butter);
+}
+
+.plant-bloom::after {
+  inset: 15px;
+  background: var(--cream);
+}
+
+.growth-1 .plant-stem {
+  transform: translateX(-50%) scaleY(0.58);
+}
+
+.growth-2 .plant-stem,
+.growth-3 .plant-stem,
+.growth-4 .plant-stem {
+  transform: translateX(-50%) scaleY(1);
+}
+
+.growth-2 .plant-leaf-left,
+.growth-3 .plant-leaf-left,
+.growth-4 .plant-leaf-left,
+.growth-3 .plant-leaf-right,
+.growth-4 .plant-leaf-right {
+  opacity: 1;
+  transform: rotate(var(--leaf-rotate, -28deg)) scale(1);
+}
+
+.growth-3 .plant-bloom,
+.growth-4 .plant-bloom {
+  opacity: 1;
+  transform: translateX(-50%) scale(0.75);
+}
+
+.growth-4 .plant-bloom {
+  transform: translateX(-50%) scale(1);
+}
+
+.plant-leaf-right {
+  --leaf-rotate: 28deg;
+}
+
+.droplet-button,
+.dice-button,
+.star-button,
+.cloud-button,
+.glow-button,
+.match-card,
+.charm-button {
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 5px 6px 0 rgba(143, 211, 255, 0.34);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.droplet-button:active,
+.dice-button:active,
+.star-button:active,
+.cloud-button:active,
+.glow-button:active,
+.match-card:active,
+.charm-button:active {
+  transform: translateY(1px);
+  box-shadow: 3px 4px 0 rgba(143, 211, 255, 0.34);
+}
+
+.droplet-button {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+}
+
+.droplet-shape {
+  width: 29px;
+  height: 38px;
+  border: 2px solid var(--ink);
+  border-radius: 60% 60% 60% 0;
+  background: var(--sky-strong);
+  transform: rotate(-45deg);
+}
+
+.star-garden {
+  align-items: center;
+}
+
+.star-field {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(44px, 1fr));
+  gap: 10px;
+  align-items: center;
+}
+
+.star-button {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-height: 48px;
+  font-size: 1.55rem;
+  background: var(--cream);
+}
+
+.star-button:nth-child(2n) {
+  background: #eefaff;
+}
+
+.star-button.is-collected {
+  background: var(--butter);
+  transform: scale(0.94);
+  opacity: 0.72;
+}
+
+.dice-garden {
+  align-items: center;
+}
+
+.cloud-board {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(30px, 1fr));
+  gap: 7px;
+}
+
+.board-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  min-height: 34px;
+  border: 1px solid rgba(49, 84, 106, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--coral);
+  font-weight: 950;
+}
+
+.board-cell.is-player::after {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 5px rgba(200, 241, 216, 0.35);
+}
+
+.board-cell.is-finish {
+  background: var(--rose);
+}
+
+.dice-button {
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  background: var(--white);
+  font-size: 2rem;
+  font-weight: 950;
+}
+
+.cloud-garden {
+  align-items: center;
+}
+
+.cloud-path {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(42px, 1fr));
+  gap: 9px;
+  align-items: center;
+}
+
+.cloud-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.25;
+  min-height: 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--muted);
+  font-weight: 950;
+}
+
+.cloud-button::before,
+.cloud-button::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background: inherit;
+  border-top: 2px solid var(--ink);
+}
+
+.cloud-button::before {
+  left: 18%;
+  top: -8px;
+  width: 23px;
+  height: 23px;
+}
+
+.cloud-button::after {
+  right: 15%;
+  top: -11px;
+  width: 29px;
+  height: 29px;
+}
+
+.cloud-button.is-active {
+  background: #fff7cf;
+  color: var(--ink);
+  animation: soft-pulse 900ms ease-in-out infinite alternate;
+}
+
+.cloud-button.is-done {
+  background: var(--mint);
+  color: var(--ink);
+  opacity: 0.78;
+}
+
+.glow-garden {
+  align-items: center;
+}
+
+.glow-orb-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 78px;
+}
+
+.glow-orb {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border: 2px solid rgba(49, 84, 106, 0.24);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 24%, rgba(255, 232, 137, 0.92) 25% 48%, rgba(143, 211, 255, 0.6) 49% 100%);
+  box-shadow:
+    0 0 0 10px rgba(255, 232, 137, 0.16),
+    0 0 34px rgba(255, 232, 137, 0.56);
+  transform: scale(var(--glow-scale));
+  transition: transform 160ms ease;
+}
+
+.glow-button {
+  justify-self: center;
+  min-width: 118px;
+  min-height: 48px;
+  padding: 8px 14px;
+  background: var(--butter);
+  font-size: 0.95rem;
+  font-weight: 950;
+}
+
+.match-garden {
+  align-items: center;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(48px, 1fr));
+  gap: 9px;
+}
+
+.match-card {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  background: #e9f7ff;
+  font-size: 1.35rem;
+  font-weight: 950;
+  transform-style: preserve-3d;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.match-card.is-flipped {
+  background: var(--cream);
+  transform: rotateY(180deg);
+}
+
+.match-card.is-matched {
+  background: var(--mint);
+  opacity: 0.74;
+}
+
+.finale-garden {
+  align-items: center;
+}
+
+.finale-circle {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(54px, 1fr));
+  gap: 9px;
+}
+
+.charm-button {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 950;
+}
+
+.charm-button:nth-child(1) {
+  background: #ddf4ff;
+}
+
+.charm-button:nth-child(2) {
+  background: var(--butter);
+}
+
+.charm-button:nth-child(3) {
+  background: var(--cream);
+}
+
+.charm-button:nth-child(4) {
+  background: var(--rose);
+}
+
+.charm-button.is-collected {
+  background: var(--mint);
+  transform: scale(0.94);
+  opacity: 0.76;
+}
+
 .letter-paper {
   min-height: 190px;
   padding: 18px 15px;
@@ -526,12 +1027,18 @@ h2 {
 }
 
 .letter-paper:not(.is-opened)::after {
-  content: "แตะเพื่อเปิดอ่าน";
+  content: attr(data-hint);
   display: block;
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.8rem;
   font-weight: 850;
+}
+
+.letter-paper.is-locked {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, rgba(49, 84, 106, 0.05) 27px 29px),
+    #f7fbfd;
 }
 
 .letter-paper p {
@@ -665,6 +1172,20 @@ h2 {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes soft-pulse {
+  from {
+    box-shadow:
+      5px 6px 0 rgba(143, 211, 255, 0.34),
+      0 0 0 0 rgba(255, 232, 137, 0.18);
+  }
+
+  to {
+    box-shadow:
+      5px 6px 0 rgba(143, 211, 255, 0.34),
+      0 0 0 8px rgba(255, 232, 137, 0.28);
   }
 }
 
