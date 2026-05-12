@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>จดหมาย</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="letters-shell" aria-label="จดหมายสีฟ้าเจ็ดวัน">
+
+        <section class="letter-stage" aria-label="ซองจดหมายสีฟ้าพาสเทล">
+          <div class="soft-sky" aria-hidden="true"></div>
+          <div class="shine-ring" aria-hidden="true"></div>
+          <div class="sparkle sparkle-one" aria-hidden="true"></div>
+          <div class="sparkle sparkle-two" aria-hidden="true"></div>
+          <div class="sparkle sparkle-three" aria-hidden="true"></div>
+          <div class="sparkle sparkle-four" aria-hidden="true"></div>
+          <div class="sparkle sparkle-five" aria-hidden="true"></div>
+          <div class="sparkle sparkle-six" aria-hidden="true"></div>
+          <button class="envelope-scene" id="envelope-button" type="button" aria-label="เปิดซองจดหมาย">
+            <div class="letter-peek">
+              <span id="peek-label">DAY 02</span>
+            </div>
+            <div class="envelope">
+              <div class="envelope-back"></div>
+              <div class="envelope-paper-shadow"></div>
+              <div class="envelope-front"></div>
+              <div class="envelope-flap"></div>
+              <div class="envelope-seal"></div>
+            </div>
+          </button>
+          <div class="stage-copy">
+            <p class="mini-label">เปิดวันละซองก็พอ</p>
+            <p id="unlock-copy">ไม่มีคำถาม ไม่มีคะแนน แค่จดหมายเล็กๆ ให้วันเบาขึ้น</p>
+          </div>
+        </section>
+
+        <section class="letter-map" aria-label="แผนที่ซองจดหมายเจ็ดวัน">
+          <div class="letter-track" id="letter-track"></div>
+        </section>
+
+        <section class="letter-console" aria-live="polite">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow" id="day-label">Day 2</p>
+              <h2 id="letter-title">ซองวันนี้</h2>
+            </div>
+            <div class="day-token" id="day-token" aria-label="หมายเลขซอง">02</div>
+          </div>
+
+          <p class="story-text" id="story-text">ซองนี้ยังปิดอยู่ กดเปิดเมื่อพร้อมอ่าน</p>
+
+          <article class="letter-paper" id="letter-paper" role="button" tabindex="0" aria-label="เปิดข้อความในซอง">
+            <p id="letter-text">ข้อความยังซ่อนอยู่ในซอง</p>
+          </article>
+
+          <p class="result-text" id="result-text">ยังไม่ได้เปิดซองนี้</p>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
