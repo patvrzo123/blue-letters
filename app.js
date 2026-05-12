@@ -5,7 +5,7 @@ const config = {
   unlockHour: 20,
   previewUnlockAllDays: false,
   earlyQuestEnabled: true,
-  questLocalTestAllLockedDays: false
+  questUnlockAnyLockedDay: true
 };
 
 const stateKey = "blueLettersStateV1";
@@ -249,7 +249,7 @@ function isQuestAvailable(day) {
     return false;
   }
 
-  if (config.questLocalTestAllLockedDays) {
+  if (config.questUnlockAnyLockedDay) {
     return true;
   }
 
